@@ -1,0 +1,14 @@
+FROM quay.io/centos/centos:stream9
+
+# lorax: provides mkksiso to inject the kickstart into the ISO
+# pykickstart: kickstart syntax validation
+# createrepo_c: generates repo metadata from the downloaded RPMs
+# dnf-plugins-core: provides "dnf download"
+# xorriso: rebuilds the ISO from the patched tree
+RUN dnf install -y \
+    lorax \
+    pykickstart \
+    createrepo_c \
+    dnf-plugins-core \
+    xorriso \
+    && dnf clean all

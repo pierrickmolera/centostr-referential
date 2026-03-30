@@ -1,0 +1,107 @@
+# Source of truth for packages to mirror and include in the ISO.
+# Edit this file to add/remove packages, then re-run build.sh.
+#
+# Syntax:
+#   -pkg    → exclude this package (e.g. -kernel to force kernel-rt)
+#   pkg     → individual package
+#
+# Note: @^minimal-environment is not resolvable via --repofrompath.
+# Equivalent packages are listed explicitly below.
+
+## Base system (equivalent to @^minimal-environment / @core)
+## These packages would normally be installed by the group but must be
+## listed explicitly for dnf download dependency resolution.
+basesystem
+filesystem
+setup
+bash
+coreutils
+shadow-utils
+passwd
+rootfiles
+glibc
+systemd
+dbus
+NetworkManager
+iproute
+iputils
+hostname
+openssh-server
+openssh-clients
+curl-minimal
+firewalld
+audit
+selinux-policy-targeted
+policycoreutils
+authselect
+crypto-policies
+dracut
+initscripts
+grub2-tools
+grubby
+e2fsprogs
+lvm2
+xfsprogs
+parted
+util-linux
+procps-ng
+less
+man-db
+ncurses
+vim-minimal
+tar
+kbd
+kexec-tools
+rsyslog
+logrotate
+tuned
+sudo
+sssd-common
+python3
+dnf
+rpm
+sssd-common
+libsss_sudo
+nvme-cli
+grub2-efi-x64
+shim-x64
+efibootmgr
+chrony
+
+## Real-time kernel (replaces the standard kernel)
+-kernel
+-kernel-core
+-kernel-modules
+-kernel-modules-extra
+kernel-rt
+kernel-rt-core
+kernel-rt-devel
+kernel-rt-modules-extra
+
+## Container management
+podman
+podman-compose
+
+## Virtualization
+qemu-kvm
+libvirt
+libguestfs-tools
+virt-install
+
+## Real-time and load testing
+realtime-tests
+stress
+stress-ng
+irqbalance
+
+## System tools
+screen
+htop
+hwloc
+git
+make
+gcc
+tcpdump
+
+## EPEL
+epel-release
