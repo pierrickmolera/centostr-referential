@@ -8,6 +8,11 @@
 # Note: @^minimal-environment is not resolvable via --repofrompath.
 # Equivalent packages are listed explicitly below.
 
+## TUI network management
+NetworkManager-tui
+newt
+slang
+
 ## Base system (equivalent to @^minimal-environment / @core)
 ## These packages would normally be installed by the group but must be
 ## listed explicitly for dnf download dependency resolution.
@@ -48,12 +53,13 @@ procps-ng
 less
 man-db
 ncurses
-vim-minimal
+vim-enhanced
 tar
 kbd
 kexec-tools
 rsyslog
 logrotate
+cronie
 tuned
 sudo
 sssd-common
